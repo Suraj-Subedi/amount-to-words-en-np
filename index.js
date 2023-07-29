@@ -1,38 +1,5 @@
 /* eslint-disable eqeqeq */
-const ones = [
-  '',
-  'one ',
-  'two ',
-  'three ',
-  'four ',
-  'five ',
-  'six ',
-  'seven ',
-  'eight ',
-  'nine ',
-  'ten ',
-  'eleven ',
-  'twelve ',
-  'thirteen ',
-  'fourteen ',
-  'fifteen ',
-  'sixteen ',
-  'seventeen ',
-  'eighteen ',
-  'nineteen '
-]
-const tens = [
-  '',
-  '',
-  'twenty',
-  'thirty',
-  'forty',
-  'fifty',
-  'sixty',
-  'seventy',
-  'eighty',
-  'ninety'
-]
+const { ones, tens } = require('./constants')
 
 const regex = /^(\d{2})(\d{2})(\d{2})(\d{2})(\d{2})(\d{1})(\d{2})$/
 
@@ -49,9 +16,13 @@ module.exports = function numWords (input) {
     throw new Error('overflow') // Does not support converting more than 9 digits yet
   }
 
-  const [, n7, n6, n5, n4, n3, n2, n1] = ('0000000000000' + numStr)
-    .substr(-13)
-    .match(regex) // left pad zeros
+  const matchResult = ('0000000000000' + numStr).substr(-13).match(regex) // left pad zeros
+  if (!matchResult) {
+    // Handle the case when the match is null (no digits found)
+    return ''
+  }
+
+  const [, n7, n6, n5, n4, n3, n2, n1] = matchResult
 
   let str = ''
   str += n7 != 0 ? (getSmallerTerm(n7) || getLargerTerm(n7)) + 'kharab ' : ''
