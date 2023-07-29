@@ -236,3 +236,26 @@ test('Should convert numbers to words correctly', (t) => {
 
   t.end()
 })
+
+// test cases for nepali numbers
+
+test('Should convert numbers to words correctly (nepali) ', (t) => {
+  const assertNum = (num, words) => {
+    t.equal(numWords(num, 'np'), words)
+  }
+
+  assertNum(1, 'एक')
+  assertNum(12, 'बाह्र')
+  assertNum(123, 'एक सय तेईस')
+  assertNum(12345, 'बाह्र हजार तिन सय पैँतालीस')
+  assertNum(12345678, 'एक करोड तेईस लाख पैँतालीस हजार छ सय अठत्तीस')
+
+  // नेपाली नम्बरहरूका लागि परीक्षा गर्नुहोस्
+  assertNum(2, 'दुई')
+  assertNum(2345, 'दुई हजार तिन सय पैँतालीस')
+  assertNum(2345678, 'तेईसलाख पैँचालीसहजार छसय अठासी')
+
+  t.throws(() => numWords(1e15))
+
+  t.end()
+})
