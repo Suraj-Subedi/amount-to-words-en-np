@@ -1,4 +1,6 @@
+import {Language} from "./types";
+
 declare module "num-words" {
-  function numWords(v: number): string;
+  function numWords(n: number, language?: Language): string;
   export default numWords;
 }
