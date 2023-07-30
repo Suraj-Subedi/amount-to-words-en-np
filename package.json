@@ -4,7 +4,7 @@
   "description": "This is a package for converting amount to words",
   "main": "index.js",
   "scripts": {
-    "test": "standard && tap test.js"
+    "test": "npx standard --fix && standard && tap test.js"
   },
   "repository": {
     "type": "git",
