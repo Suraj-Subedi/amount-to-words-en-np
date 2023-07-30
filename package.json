@@ -1,6 +1,6 @@
 {
   "name": "amount-to-words-en-np",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "This is a package for converting amount to words",
   "main": "index.js",
   "scripts": {
