@@ -31,6 +31,60 @@ module.exports = function numWords (input, language = 'en') {
   }
 }
 
+// function convertPaisaToWords (paisa) {
+//   const ones = [
+//     '',
+//     'one',
+//     'two',
+//     'three',
+//     'four',
+//     'five',
+//     'six',
+//     'seven',
+//     'eight',
+//     'nine',
+//     'ten',
+//     'eleven',
+//     'twelve',
+//     'thirteen',
+//     'fourteen',
+//     'fifteen',
+//     'sixteen',
+//     'seventeen',
+//     'eighteen',
+//     'nineteen'
+//   ]
+//   const tens = [
+//     '',
+//     '',
+//     'twenty',
+//     'thirty',
+//     'forty',
+//     'fifty',
+//     'sixty',
+//     'seventy',
+//     'eighty',
+//     'ninety'
+//   ]
+//   let words = ''
+//   const paisaStr = paisa.toString()
+//   if (paisaStr.length === 1) {
+//     words = ones[parseInt(paisaStr)]
+//   } else if (paisaStr.length === 2) {
+//     if (paisaStr.charAt(0) === '1') {
+//       words = ones[parseInt(paisaStr)]
+//     } else {
+//       words =
+//         tens[parseInt(paisaStr.charAt(0))] +
+//         ' ' +
+//         ones[parseInt(paisaStr.charAt(1))]
+//     }
+//   } else {
+//     words = 'Invalid paisa value'
+//   }
+//   return words + ' paisa only.'
+// }
+
 const getNepaliNumber = (matchResult) => {
   const [, n7, n6, n5, n4, n3, n2, n1] = matchResult
   let str = ''
