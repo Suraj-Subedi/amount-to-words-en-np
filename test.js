@@ -32,6 +32,10 @@ test('Should convert numbers to words correctly', (t) => {
     123456789,
     'twelve crore thirty four lakh fifty six thousand seven hundred and eighty nine'
   )
+  assertNum(
+    123456789,
+    'twelve crore thirty four lakh fifty six thousand seven hundred and eighty nine'
+  )
 
   assertNum(2, 'two')
   assertNum(23, 'twenty three')
@@ -231,6 +235,8 @@ test('Should convert numbers to words correctly', (t) => {
   assertNum('12x', '')
   assertNum('14.5', '')
   assertNum(1e3, 'one thousand')
+
+  // testing decimal numbers
 
   t.throws(() => numWords(1e15))
 
