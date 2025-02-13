@@ -20,7 +20,7 @@ A package for converting numbers to words (up to 13 digits), It supports both En
 # Install
 
 ```js
-npm i num-words
+npm i amount-to-words-en-np
 ```
 
 # Example
@@ -55,7 +55,7 @@ npm i num-words
 # Usage
 
 ```js
-const numWords = require('num-words')
+const numWords = require('amount-to-words-en-np')
 
 const amountInWords = numWords(12345) // twelve thousand three hundred and forty five
 
